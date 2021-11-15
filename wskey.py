@@ -229,14 +229,21 @@ def appjmp(wskey, tokenKey):
 
 # 返回值 svv, stt, suid, jign
 def get_sign():
-    url = str(base64.b64decode('aHR0cDovLzE1MC4xNTguMTUzLjUzOjg0NDMvd3NrZXk=').decode())
+    url = "http://127.0.0.1:9999/api/wskey/sign"
+    payload = {
+        "uuid": "9d53afe389f6ae5f",
+        "functionId": "genToken",
+        "version": "10.2.2",
+        "body": "{\"flush\":\"0\"}"
+    }
+    payload = json.dumps(payload)
     for i in range(3):
         try:
             headers = {
-                "User-Agent": ua,
-                "Connection": "close"
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
-            res = requests.get(url=url, headers=headers, verify=False, timeout=20)
+            res = requests.post(url=url, headers=headers, data=payload, verify=False, timeout=20)
         except requests.exceptions.ConnectTimeout:
             logger.info("\n获取Sign超时, 正在重试!" + str(i))
             time.sleep(1)
