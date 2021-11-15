@@ -266,6 +266,7 @@ def get_sign():
                 stt = sign_list['st']
                 suid = sign_list['uuid']
                 jign = sign_list['sign']
+                logger.info(sign_list)
                 return svv, stt, suid, jign
 
 
