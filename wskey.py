@@ -451,14 +451,15 @@ if __name__ == '__main__':
                 jck = str(return_serch[1])  # 拿到 JD_COOKIE
                 if not check_ck(jck):  # bool: False 判定 JD_COOKIE 有效性
                     return_ws = getToken(ws)  # 使用 WSKEY 请求获取 JD_COOKIE bool jd_ck
+                    logger.info(return_ws)
                     if return_ws[0]:  # bool: True
                         nt_key = str(return_ws[1])
-                        # logger.info("wskey转pt_key成功", nt_key)
+                        logger.info("wskey转pt_key成功", nt_key)
                         logger.info("wskey转换成功")
                         eid = return_serch[2]  # 从 return_serch 拿到 eid
                         ql_update(eid, nt_key)  # 函数 ql_update 参数 eid JD_COOKIE
                     else:
-                        # logger.info(str(wspin) + "wskey失效\n")
+                        logger.info(str(wspin) + "wskey失效\n")
                         eid = return_serch[2]
                         logger.info(str(wspin) + "账号禁用")
                         ql_disable(eid)
