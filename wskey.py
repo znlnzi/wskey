@@ -229,7 +229,7 @@ def appjmp(wskey, tokenKey):
 
 # 返回值 svv, stt, suid, jign
 def get_sign():
-    url = "http://127.0.0.1:9999/api/wskey/sign"
+    url = "http://111.229.103.238:9999/api/wskey/sign"
     payload = {
         "uuid": "9d53afe389f6ae5f",
         "functionId": "genToken",
