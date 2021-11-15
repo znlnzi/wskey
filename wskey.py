@@ -188,8 +188,7 @@ def getToken(wskey):
         res = requests.post(url=url, params=params, headers=headers, data=data, verify=False, timeout=10)
         res_json = json.loads(res.text)
         tokenKey = res_json['tokenKey']
-    except Exception, e:
-        logger.info(str(Exception))
+    except Exception as e:
         logger.info(str(e))
         logger.info("WSKEY转换接口出错, 请稍后尝试, 脚本退出")
         sys.exit(1)
