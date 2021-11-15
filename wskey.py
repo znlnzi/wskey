@@ -181,13 +181,16 @@ def getToken(wskey):
         'sign': sign,
         'sv': sv
     }
+    logger.info(params)
     url = 'https://api.m.jd.com/client.action'
     data = 'body=%7B%22action%22%3A%22to%22%2C%22to%22%3A%22https%253A%252F%252Fplogin.m.jd.com%252Fcgi-bin%252Fm%252Fthirdapp_auth_page%253Ftoken%253DAAEAIEijIw6wxF2s3bNKF0bmGsI8xfw6hkQT6Ui2QVP7z1Xg%2526client_type%253Dandroid%2526appid%253D879%2526appup_type%253D1%22%7D&'
     try:
         res = requests.post(url=url, params=params, headers=headers, data=data, verify=False, timeout=10)
         res_json = json.loads(res.text)
         tokenKey = res_json['tokenKey']
-    except:
+    except Exception, e:
+        logger.info(str(Exception))
+        logger.info(str(e))
         logger.info("WSKEY转换接口出错, 请稍后尝试, 脚本退出")
         sys.exit(1)
     else:
