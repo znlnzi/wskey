@@ -174,7 +174,7 @@ def getToken(wskey):
     }
     params = {
         'functionId': 'genToken',
-        'clientVersion': '10.2.2',
+        'clientVersion': '10.1.4',
         'client': 'android',
         'uuid': uuid,
         'st': st,
@@ -236,7 +236,7 @@ def get_sign():
     payload = {
         "uuid": "9d53afe389f6ae5f",
         "functionId": "genToken",
-        "version": "10.2.2",
+        "version": "10.1.4",
         "body": "{\"flush\":\"0\"}"
     }
     payload = json.dumps(payload)
