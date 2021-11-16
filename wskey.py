@@ -13,6 +13,7 @@ import sys
 import logging
 import time
 import urllib.parse
+import uuid
 
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger(__name__)
@@ -174,8 +175,8 @@ def getToken(wskey):
     }
     params = {
         'functionId': 'genToken',
-        'clientVersion': '10.2.2',
-        'client': 'apple',
+        'clientVersion': '10.0.8',
+        'client': 'android',
         'uuid': uuid,
         'st': st,
         'sign': sign,
@@ -232,11 +233,13 @@ def appjmp(wskey, tokenKey):
 
 # 返回值 svv, stt, suid, jign
 def get_sign():
+    uuid_value = uuid.uuid1()
+    uuid_str = uuid_value.hex
     url = "http://111.229.103.238:9999/api/wskey/sign"
     payload = {
-        "uuid": "9d53afe389f6ae5f",
+        "uuid": uuid_str,
         "functionId": "genToken",
-        "version": "10.2.2",
+        "version": "10.0.8",
         "body": "{\"flush\":\"0\"}"
     }
     payload = json.dumps(payload)
