@@ -240,7 +240,7 @@ def get_sign():
         "uuid": uuid_str,
         "functionId": "genToken",
         "version": "10.0.8",
-        "body": "{\"flush\":\"0\"}"
+        "body": "%7B%22action%22%3A%22to%22%2C%22to%22%3A%22https%253A%252F%252Fplogin.m.jd.com%252Fcgi-bin%252Fm%252Fthirdapp_auth_page%253Ftoken%253DAAEAIEijIw6wxF2s3bNKF0bmGsI8xfw6hkQT6Ui2QVP7z1Xg%2526client_type%253Dandroid%2526appid%253D879%2526appup_type%253D1%22%7D&"
     }
     payload = json.dumps(payload)
     for i in range(3):
