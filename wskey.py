@@ -461,7 +461,7 @@ if __name__ == '__main__':
                     logger.info(return_ws)
                     if return_ws[0]:  # bool: True
                         nt_key = str(return_ws[1])
-                        logger.info("wskey转pt_key成功", nt_key)
+                        #logger.info("wskey转pt_key成功", nt_key)
                         logger.info("wskey转换成功")
                         eid = return_serch[2]  # 从 return_serch 拿到 eid
                         ql_update(eid, nt_key)  # 函数 ql_update 参数 eid JD_COOKIE
