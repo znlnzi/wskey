@@ -235,7 +235,7 @@ def appjmp(wskey, tokenKey):
 def get_sign():
     uuid_value = uuid.uuid1()
     uuid_str = uuid_value.hex
-    url = "http://host.docker.internal:9999/api/wskey/sign"
+    url = "http://172.18.0.1:9999/api/wskey/sign"
     payload = {
         "uuid": uuid_str,
         "functionId": "genToken",
