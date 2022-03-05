@@ -10,6 +10,7 @@ import sys
 import logging
 import time
 import re
+import uuid
 
 if "WSKEY_DEBUG" in os.environ:
     logging.basicConfig(level=logging.DEBUG, format='%(message)s')
